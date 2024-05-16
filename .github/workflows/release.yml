@@ -33,7 +33,7 @@ jobs:
 
       - name: Convert PDF to PNG
         run: |
-          convert -density 900 -background white -alpha off Zhu_Harry_Resume.pdf -quality 90 Zhu_Harry_Resume.png
+          convert -density 300 -background white -alpha off Zhu_Harry_Resume.pdf -quality 90 Zhu_Harry_Resume.png
 
       - name: Commit and Push PNG
         run: |
