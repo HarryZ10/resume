@@ -23,23 +23,11 @@ jobs:
     - name: Rename PDF file
       run: mv main.pdf Zhu_Harry_Resume.pdf
 
-    - name: Install ImageMagick
-      run: sudo apt-get install -y imagemagick
-
-    - name: Modify ImageMagick security policy
-      run: |
-        sudo sed -i 's/rights="none" pattern="PDF"/rights="read|write" pattern="PDF"/' /etc/ImageMagick-6/policy.xml
-        sudo sed -i 's/<policy domain="resource" name="width" value="\([^"]*\)"/<policy domain="resource" name="width" value="20000"/' /etc/ImageMagick-6/policy.xml
-        sudo sed -i 's/<policy domain="resource" name="height" value="\([^"]*\)"/<policy domain="resource" name="height" value="20000"/' /etc/ImageMagick-6/policy.xml
-
-    - name: Convert PDF to JPG
-      run: convert -density 300 -strip Zhu_Harry_Resume.pdf Zhu_Harry_Resume.jpg
-      
     - name: Upload JPG file
       uses: actions/upload-artifact@v2
       with:
         name: Zhu_Harry_Resume
-        path: Zhu_Harry_Resume.jpg
+        path: Zhu_Harry_Resume.pdf
 
     - name: Commit and push JPG
       run: |
