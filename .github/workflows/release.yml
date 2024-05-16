@@ -26,6 +26,10 @@ jobs:
     - name: Install ImageMagick
       run: sudo apt-get install -y imagemagick
 
+    - name: Modify ImageMagick security policy
+      run: |
+        sudo sed -i 's/rights="none" pattern="PDF"/rights="read|write" pattern="PDF"/' /etc/ImageMagick-6/policy.xml
+        
     - name: Convert PDF to JPG
       run: convert -density 300 Zhu_Harry_Resume.pdf -quality 90 Zhu_Harry_Resume.jpg
 
