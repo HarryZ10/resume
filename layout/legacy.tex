@@ -1,0 +1,205 @@
+\documentclass[letterpaper,11pt]{article}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\usepackage{microtype}
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeDot}{
+    \raisebox{0.8ex}{
+        \vrule width 1.1pt height 1.1pt depth 0pt
+    }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+\begin{document}
+
+%----------HEADING----------
+% Main Header
+\begin{center}
+    \textbf{\Huge\scshape Harry Zhu} \\ \vspace{1pt}
+    San Francisco, CA $|$ +1-510-813-1219 $|$ \href{mailto:harryzhu45@gmail.com}{\underline{harryzhu45@gmail.com}}
+    $|$ \href{https://linkedin.com/in/harryjzhu}{\underline{linkedin.com/in/harryjzhu}}
+    % $|$ \href{https://github.com/HarryZ10}{\underline{github.com/HarryZ10}}
+    $|$ \href{https://harryzhu.com}{\underline{harryzhu.com}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+        {George Fox University}{Graduated April 2024}
+        {Bachelor of Science in Computer Science}{Newberg, OR}
+        % {\item{\small{\textit{Affiliations: ACM Chapter President, Teaching Assistant, CodePath, College Track}}}}
+        {\item{\small{\textit{Relevant Coursework: Operating Systems, Database Systems, Computer Architecture, Data Structures \& Algorithms}}}}
+      % \end{itemize}
+    % \resumeSubheading
+    %   {CodePath}{Remote}
+    %   {Certificate in Intermediate Software Engineering}{Feb 2024 - May 2024}
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Software Engineer Intern}{August 2021 -- April 2024}
+      {George Fox University}{Newberg, OR}
+      % {Software Engineer Intern (Frontend)}{August 2021 -- Present}
+      % {George Fox University}{Newberg, OR}
+
+      \resumeItemListStart
+        \resumeItem{Developed 20+ automation scripts in \textbf{Node.js}, achieving a 90\% reduction in manual build time down to 2-4 seconds}
+        \resumeItem{Engineered a \underline{\href{https://github.com/HarryZ10/cascade-toolkit-mirror/}{\textbf{monitoring tool}}} using \textbf{Vue.js} and \textbf{Node.js}, reducing manual verification of content accuracy by 95\%}
+        \resumeItem{Optimized branding by redesigning \textbf{100+} legacy pages trafficked by \textbf{1,000+} users with \textbf{JavaScript} and \textbf{CSS}}
+        \resumeItem{Increased overall web accessibility by A/B testing 20+ legacy and new features in a cross-functional team}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Software Engineer Intern}{June 2023 -- August 2023}
+      {Liminal Insights}{Emeryville, CA}
+      
+      \resumeItemListStart
+        \resumeItem{Reduced flagship product deployment time by 80\% by building a configuration platform using \textbf{React} and \textbf{Python}}
+        \resumeItem{Optimized battery cell testing process efficiency, offloading \textbf{50+} log messages/minute with \textbf{ZeroMQ} and pub/subs}
+        \resumeItem{Stabilized uptime and data flow of 100+ \textbf{OPC} events, removing race conditions involving \textbf{Redis} subscriptions}
+    \resumeItemListEnd
+
+    \resumeSubheading
+      {Software Engineer Intern}{June 2022 -- August 2022}{Recidiviz}{San Francisco, CA}
+      \resumeItemListStart
+        \resumeItem{Built an access monitoring tool in \textbf{Python}, \textbf{Docker}, and \textbf{GCP}, reducing \textbf{IAM} audit time by 90\% across 17 vendors}
+        \resumeItem{Introduced over 10 new security controls and alerts in infrastructure services across 3 disparate cloud environments}
+        \resumeItem{Resolved \textbf{200+} product and container vulnerabilities using \textbf{CI/CD} with \underline{\href{https://github.com/Recidiviz/pulse-data/actions}
+            {\textbf{CodeQL}}} and \underline{\href{https://github.com/Recidiviz/pulse-data/actions}
+            {\textbf{Trivy}}} for automated scans}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Security Analyst Intern (SecDevOps)}{May 2021 -- August 2021}
+      {Northwest Natural Gas Utility Company}{Portland, OR}
+
+      \resumeItemListStart
+        \resumeItem{Streamlined security protocols by documenting inventory for 20+ in-house software and hardware systems}
+        \resumeItem{Created a \textbf{Splunk} dashboard for real-time detection of suspicious logins and tracking pre-success failed attempts}
+        \resumeItem{Revamped enterprise knowledge sharing by overhauling 100+ legacy SharePoint files, enhancing process efficiency}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+
+        \resumeProjectHeading
+            {\textbf{ECG Triage for TZ Medical (Group Project)} $|$ \small{50+ hours of \textbf{SciPy}, \textbf{NumPy}, \textbf{Tensorflow}, and \textbf{Scikit-Learn}}}
+    
+
+            \resumeItemListStart
+                \resumeItem{Extracted 8+ domain features on over \textbf{34,000+} ECG events by developing 3+ data processing scripts}
+                \resumeItem{Detected arrhythmia events with over \textbf{95\%} precision and \textbf{70\%} confidence using a supervised learning algorithm}
+            \resumeItemListEnd
+
+        \resumeProjectHeading
+            {\underline{\href{https://blog.harryzhu.com}{\textbf{Career Blog (Personal Project)}}} $|$ \small{50+ hours of \textbf{PHP} and \textbf{TypeScript} development with Digital Ocean and Vercel}}
+
+
+            \resumeItemListStart
+                \resumeItem{Architected 10+ \textbf{React} components and 10+ back-end RESTful API endpoints using Postgres and SQL in Linux}
+                \resumeItem{Implemented JWT APIs server-side and React Contexts and Hooks to manage user authentication and blog services}
+            \resumeItemListEnd
+
+        % \resumeProjectHeading
+        %     {\underline{\href{https://traceyours.com/}{\textbf{Trace Yours Platform (Contract)}}} $|$ \small{40+ hours of NextJS, Tailwind, and MongoDB development}}
+
+
+        %     \resumeItemListStart
+        %         \resumeItem{Initiated active involvement in building 4+ features/week in NextJS and MongoDB to optimize user experience}
+        %         \resumeItem{Rectified 5+ critical bugs in legacy client-side code, leading to more stable application performance by 50\%}
+        %     \resumeItemListEnd
+        
+        \resumeProjectHeading
+            {\underline{\href{https://pickaboxdemo.netlify.app}
+            {\textbf{Pickabox (Hackathon Team Project)}}} $|$ \small{45+ hours of \textbf{React} and \textbf{Python} development with Google Cloud services}}
+
+
+            \resumeItemListStart
+                \resumeItem{Won 2nd place in Best Design at Sacramento Hacks in 2021}
+                \resumeItem{Deployed a full-stack web app that enhances user engagement with Wikipedia articles and images}
+                \resumeItem{Implemented \textbf{Cloud Run} services for back-end Wikipedia API pipelines to manage the article retrieval service}
+            \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+
+%-------------------------------------------
+\end{document}
