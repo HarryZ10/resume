@@ -23,16 +23,21 @@ jobs:
     - name: Rename PDF
       run: mv main.pdf Zhu_Harry_Resume.pdf
 
-    - name: Upload PDF
+    - name: Convert PDF to PNG
+      run: |
+        sudo apt-get install -y poppler-utils
+        pdftoppm -png -r 300 Zhu_Harry_Resume.pdf Zhu_Harry_Resume
+
+    - name: Upload PNG
       uses: actions/upload-artifact@v2
       with:
         name: Zhu_Harry_Resume
-        path: Zhu_Harry_Resume.pdf
+        path: Zhu_Harry_Resume.png
 
-    - name: Commit and push JPG
+    - name: Commit and push PNG
       run: |
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git config --global user.name "github-actions[bot]"
-        git add Zhu_Harry_Resume.pdf
-        git commit -m "Update Zhu_Harry_Resume.pdf"
+        git add Zhu_Harry_Resume.png
+        git commit -m "Update Zhu_Harry_Resume.png"
         git push
