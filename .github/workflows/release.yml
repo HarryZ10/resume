@@ -23,16 +23,22 @@ jobs:
     - name: Rename PDF file
       run: mv main.pdf Zhu_Harry_Resume.pdf
 
-    - name: Upload PDF file
+    - name: Install ImageMagick
+      run: sudo apt-get install -y imagemagick
+
+    - name: Convert PDF to JPG
+      run: convert -density 300 Zhu_Harry_Resume.pdf -quality 90 Zhu_Harry_Resume.jpg
+
+    - name: Upload JPG file
       uses: actions/upload-artifact@v2
       with:
         name: Zhu_Harry_Resume
-        path: Zhu_Harry_Resume.pdf
+        path: Zhu_Harry_Resume.jpg
 
-    - name: Commit and push PDF
+    - name: Commit and push JPG
       run: |
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git config --global user.name "github-actions[bot]"
-        git add Zhu_Harry_Resume.pdf
-        git commit -m "Update Zhu_Harry_Resume.pdf"
+        git add Zhu_Harry_Resume.jpg
+        git commit -m "Update Zhu_Harry_Resume.jpg"
         git push
