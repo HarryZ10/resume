@@ -13,6 +13,9 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Install dependencies
+      run: sudo apt-get install -y poppler-utils
+
     - name: Compile LaTeX document
       uses: xu-cheng/latex-action@v2
       with:
@@ -24,9 +27,7 @@ jobs:
       run: mv main.pdf Zhu_Harry_Resume.pdf
 
     - name: Convert PDF to PNG
-      run: |
-        sudo apt-get install -y poppler-utils
-        pdftoppm -png -r 300 Zhu_Harry_Resume.pdf Zhu_Harry_Resume.png
+      run: pdftoppm -png -r 300 Zhu_Harry_Resume.pdf Zhu_Harry_Resume.png
 
     - name: Upload PNG
       uses: actions/upload-artifact@v2
