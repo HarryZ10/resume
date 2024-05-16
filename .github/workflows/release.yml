@@ -1,4 +1,4 @@
-name: Build LaTeX Resume
+name: PDF to PNG
 
 on:
   push:
@@ -8,37 +8,37 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Install dependencies
-      run: sudo apt-get install -y poppler-utils
+      - name: Install ghostscript
+        run: sudo apt install ghostscript
 
-    - name: Compile LaTeX document
-      uses: xu-cheng/latex-action@v2
-      with:
-        root_file: main.tex
-        working_directory: .
-        args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+      - name: Change ImageMagick security policy
+        run: |
+          DQT='"' 
+          SRC="rights=${DQT}none${DQT} pattern=${DQT}PDF${DQT}"
+          RPL="rights=${DQT}read\|write${DQT} pattern=${DQT}PDF${DQT}"
+          sudo sed -i "s/$SRC/$RPL/" /etc/ImageMagick-6/policy.xml
 
-    - name: Rename PDF
-      run: mv main.pdf Zhu_Harry_Resume.pdf
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: main.tex
+          working_directory: .
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
 
-    - name: Convert PDF to PNG
-      run: pdftoppm -png -r 300 Zhu_Harry_Resume.pdf Zhu_Harry_Resume.png
+      - name: Rename PDF
+        run: mv main.pdf Zhu_Harry_Resume.pdf
 
-    - name: Upload PNG
-      uses: actions/upload-artifact@v2
-      with:
-        name: Zhu_Harry_Resume
-        path: Zhu_Harry_Resume.png
+      - name: Convert PDF to PNG
+        run: |
+          convert -density 900 -background white -alpha off Zhu_Harry_Resume.pdf -quality 90 Zhu_Harry_Resume.png
 
-    - name: Commit and push PNG
-      run: |
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git config --global user.name "github-actions[bot]"
-        git add Zhu_Harry_Resume.png
-        git commit -m "Update Zhu_Harry_Resume.png"
-        git push
+      - name: Commit and Push PNG
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add Zhu_Harry_Resume.png
+          git commit -m "[bot] Update resume based on new user revisions"
+          git push
