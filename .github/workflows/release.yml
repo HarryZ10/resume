@@ -1,0 +1,38 @@
+name: Build LaTeX Resume
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Compile LaTeX document
+      uses: xu-cheng/latex-action@v2
+      with:
+        root_file: main.tex
+        working_directory: .
+        args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+
+    - name: Rename PDF file
+      run: mv main.pdf Zhu_Harry_Resume.pdf
+
+    - name: Upload PDF file
+      uses: actions/upload-artifact@v2
+      with:
+        name: Zhu_Harry_Resume
+        path: Zhu_Harry_Resume.pdf
+
+    - name: Commit and push PDF
+      run: |
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git config --global user.name "github-actions[bot]"
+        git add Zhu_Harry_Resume.pdf
+        git commit -m "Update Zhu_Harry_Resume.pdf"
+        git push
