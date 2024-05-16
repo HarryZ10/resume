@@ -31,8 +31,8 @@ jobs:
         sudo sed -i 's/rights="none" pattern="PDF"/rights="read|write" pattern="PDF"/' /etc/ImageMagick-6/policy.xml
         
     - name: Convert PDF to JPG
-      run: convert -density 300 Zhu_Harry_Resume.pdf -quality 90 Zhu_Harry_Resume.jpg
-
+      run: convert -density 300 -strip Zhu_Harry_Resume.pdf Zhu_Harry_Resume.jpg
+      
     - name: Upload JPG file
       uses: actions/upload-artifact@v2
       with:
