@@ -21,7 +21,7 @@ Use this to edit your resume and on push, Github will generate the pdf using `pd
 
 ## Example Usage
 
-`pdflatex main.tex && open main.df`
+`pdflatex main.tex && open main.pdf`
 
 # Credit
 
