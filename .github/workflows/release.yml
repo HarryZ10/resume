@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Install ghostscript
-        run: sudo apt install ghostscript
+        run: sudo apt-get update && sudo apt install ghostscript
 
       - name: Change ImageMagick security policy
         run: |
