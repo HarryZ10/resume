@@ -10,11 +10,13 @@
     }
 }
 
-\newcommand{\resumeSubheading}[4]{
+\newcommand{\resumeSubheading}[5]{
   \vspace{-2pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \begin{tabular*}{0.97\textwidth}[t]{p{0.7\textwidth}@{\extracolsep{\fill}}r}
       \textbf{#1} \textcolor{gray}{|} {#2} & {#4} \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}
+    \small{\textbf{\textit{About: }}\textit{#5}}
+    \vspace{5pt}\vspace{-7pt}
 }
 
 % \newcommand{\resumeEducationSubheading}[7]{
@@ -33,7 +35,7 @@
 %     \end{itemize}
 % }
 
-\newcommand{\resumeEducationSubheading}[8]{
+\newcommand{\resumeEducationSubheading}[7]{
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
@@ -42,13 +44,14 @@
     \item{#5}
     \item{#6}
     \item{#7}
-    \item{#8}
+    % \item{#8}
 }
 
-\newcommand{\resumeSkillsSubheading}[3]{
+\newcommand{\resumeSkillsSubheading}[4]{
     \item{#1}
     \item{#2}
     \item{#3}
+    \item{#4}
 }
 
 
