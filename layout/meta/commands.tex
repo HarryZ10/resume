@@ -12,10 +12,18 @@
 
 \newcommand{\resumeSubheading}[4]{
   \vspace{-2pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} \textcolor{gray}{|} {#2} & {#4} \\
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      {#3} & {#4} \\
     \end{tabular*}\vspace{-7pt}
 }
+
+% \newcommand{\resumeSubheading}[4]{
+%   \vspace{-2pt}\item
+%     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+%       \textbf{#1} \textcolor{gray}{|} {#2} & {#4} \\
+%     \end{tabular*}\vspace{-7pt}
+% }
 
 % \newcommand{\resumeEducationSubheading}[7]{
 %   \vspace{-2pt}\item
@@ -33,40 +41,43 @@
 %     \end{itemize}
 % }
 
-\newcommand{\resumeEducationSubheading}[6]{
+\newcommand{\resumeEducationSubheading}[4]{
   \vspace{-2pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       {#3} & {#4} \\
     \end{tabular*}
-    \vspace{-5pt}
-    \begin{itemize}[leftmargin=*,label={}]
-      \small{
-        \item{#5}
-        \item{#6}
-        % \item{#7}
-      }
-    \end{itemize}
+    % \vspace{-5pt}
+    % \begin{itemize}[leftmargin=*,label={}]
+    %   \small{
+    %     \item{#5}
+    %     % \item{#6}
+    %     % \item{#7}
+    %   }
+    % \end{itemize}
 }
 
 
 \newcommand{\resumeSubSubheading}[2]{
     \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
       \textit{\small#1} & \textit{\small #2} \\
     \end{tabular*}\vspace{-7pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
     \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
       \small#1 & #2 \\
     \end{tabular*}\vspace{-7pt}
 }
 
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+
+\setlist[itemize]{labelindent=0pt, leftmargin=*, itemindent=0pt}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, itemindent=0in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.19in, itemindent=0in]}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
